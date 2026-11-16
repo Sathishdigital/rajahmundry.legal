@@ -3,178 +3,411 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142a46">
-  <meta name="description" content="Local legal information and advocate directory for Rajamahendravaram and surrounding areas. Explore legal topics and find advocate listings.">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Rajahmundry.Legal — local legal information, practice-area guides and advocate directory for Rajamahendravaram and nearby areas in Andhra Pradesh.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.rajahmundry.legal/">
   <title>Rajahmundry.Legal | Local Legal Information & Advocate Directory</title>
-  <link rel="icon" type="image/png" href="assets/rajahmundry-legal-logo.png">
+  <link rel="icon" href="assets/rajahmundry-legal-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span data-en="Local legal information & advocate directory" data-te="స్థానిక న్యాయ సమాచారం & న్యాయవాదుల వివరాలు">Local legal information & advocate directory</span>
-      <span class="topbar-note" data-en="Rajamahendravaram · Andhra Pradesh" data-te="రాజమహేంద్రవరం · ఆంధ్రప్రదేశ్">Rajamahendravaram · Andhra Pradesh</span>
+
+  <div class="topline">
+    <div class="container topline-inner">
+      <span data-en="Local legal information & advocate directory" data-te="స్థానిక న్యాయ సమాచారం & న్యాయవాదుల డైరెక్టరీ">Local legal information & advocate directory</span>
+      <span data-en="Rajamahendravaram · Andhra Pradesh" data-te="రాజమహేంద్రవరం · ఆంధ్రప్రదేశ్">Rajamahendravaram · Andhra Pradesh</span>
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="container header-inner">
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="Rajahmundry Legal home">
-        <img src="assets/rajahmundry-legal-logo.png" alt="Rajahmundry.Legal logo">
+        <img src="assets/rajahmundry-legal-logo.png" alt="Rajahmundry Legal logo" onerror="this.style.display='none'">
+        <span class="brand-fallback">RAJAHMUNDRY<span>.LEGAL</span></span>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
         <a href="#home" data-en="Home" data-te="హోమ్">Home</a>
-        <a href="#directory" data-en="Find an Advocate" data-te="న్యాయవాదిని కనుగొనండి">Find an Advocate</a>
-        <a href="#practice" data-en="Legal Areas" data-te="న్యాయ రంగాలు">Legal Areas</a>
+        <a href="#advocates" data-en="Find an Advocate" data-te="న్యాయవాదిని కనుగొనండి">Find an Advocate</a>
+        <button class="nav-talk" type="button" data-open-lawyer-modal data-en="Talk to a Lawyer" data-te="న్యాయవాదితో మాట్లాడండి">Talk to a Lawyer</button>
+        <a href="#practice-areas" data-en="Legal Areas" data-te="న్యాయ రంగాలు">Legal Areas</a>
         <a href="#resources" data-en="Legal Information" data-te="న్యాయ సమాచారం">Legal Information</a>
+        <a href="#guides-articles">Guides &amp; Articles</a>
+        <a href="#legal-advice" data-en="Legal Advice" data-te="న్యాయ సలహా">Legal Advice</a>
+        <button class="nav-client" type="button" data-open-client-account>For Clients</button>
         <a href="#about" data-en="About" data-te="మా గురించి">About</a>
-        <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">తెలుగు</button>
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to Telugu">తెలుగు</button>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="home">
-      <div class="hero-pattern"></div>
-      <div class="container hero-grid">
+      <div class="hero-grid container">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span><span data-en="YOUR LOCAL LEGAL INFORMATION HUB" data-te="మీ స్థానిక న్యాయ సమాచార వేదిక">YOUR LOCAL LEGAL INFORMATION HUB</span></div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span><span data-en="Your local legal information hub" data-te="మీ స్థానిక న్యాయ సమాచార కేంద్రం">Your local legal information hub</span></p>
           <h1 data-en="Understand your rights. Find the right legal help." data-te="మీ హక్కులను తెలుసుకోండి. సరైన న్యాయ సహాయం పొందండి.">Understand your rights. Find the right legal help.</h1>
-          <p data-en="Explore legal information and advocate listings for Rajamahendravaram and nearby areas." data-te="రాజమహేంద్రవరం మరియు పరిసర ప్రాంతాల కోసం న్యాయ సమాచారం, న్యాయవాదుల వివరాలను తెలుసుకోండి.">Explore legal information and advocate listings for Rajamahendravaram and nearby areas.</p>
+          <p class="hero-description" data-en="Explore practical legal information and advocate listings for Rajamahendravaram and nearby areas." data-te="రాజమహేంద్రవరం మరియు పరిసర ప్రాంతాల కోసం ఉపయోగకరమైన న్యాయ సమాచారాన్ని, న్యాయవాదుల వివరాలను తెలుసుకోండి.">Explore practical legal information and advocate listings for Rajamahendravaram and nearby areas.</p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="#directory" data-en="Explore Advocate Directory" data-te="న్యాయవాదుల వివరాలు చూడండి">Explore Advocate Directory</a>
-            <a class="btn btn-outline-light" href="#practice" data-en="Explore Legal Topics" data-te="న్యాయ అంశాలను చూడండి">Explore Legal Topics</a>
+            <a class="button button-light" href="#advocates" data-en="Explore Advocate Directory" data-te="న్యాయవాదుల డైరెక్టరీ">Explore Advocate Directory</a>
+            <a class="button button-outline-light" href="#practice-areas" data-en="Explore Legal Topics" data-te="న్యాయ అంశాలు">Explore Legal Topics</a>
           </div>
-          <div class="hero-trust">
-            <span>✓ <span data-en="Local information" data-te="స్థానిక సమాచారం">Local information</span></span>
-            <span>✓ <span data-en="English & Telugu" data-te="ఇంగ్లీష్ & తెలుగు">English & Telugu</span></span>
-            <span>✓ <span data-en="Easy to navigate" data-te="సులభమైన వినియోగం">Easy to navigate</span></span>
+          <div class="hero-points">
+            <span data-en="Local information" data-te="స్థానిక సమాచారం">Local information</span>
+            <span data-en="English & Telugu" data-te="ఇంగ్లీష్ & తెలుగు">English & Telugu</span>
+            <span data-en="Easy to navigate" data-te="సులభమైన వినియోగం">Easy to navigate</span>
           </div>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <div class="art-ring"></div>
-          <div class="art-card">
-            <div class="art-icon">⚖</div>
-            <div class="art-line long"></div>
-            <div class="art-line"></div>
-            <div class="art-line short"></div>
-            <div class="art-caption">JUSTICE · KNOWLEDGE · GUIDANCE</div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="legal-emblem">
+            <svg viewBox="0 0 220 220" role="img" aria-label="">
+              <path d="M110 32v126M62 66h96M76 66l-24 52h48L76 66Zm68 0-24 52h48l-24-52Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M82 172h56M96 185h28" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="110" cy="32" r="7" fill="currentColor"/>
+            </svg>
+            <span>JUSTICE · KNOWLEDGE · GUIDANCE</span>
           </div>
-          <div class="art-location"><span>⌖</span> RAJAMAHENDRAVARAM</div>
+          <p class="art-caption">RAJAMAHENDRAVARAM</p>
         </div>
       </div>
     </section>
 
-    <section class="quick-strip">
-      <div class="container quick-grid">
-        <a href="#directory"><span class="quick-icon">⌕</span><span data-en="Find an Advocate" data-te="న్యాయవాదిని కనుగొనండి">Find an Advocate</span><b>→</b></a>
-        <a href="#practice"><span class="quick-icon">§</span><span data-en="Understand Legal Areas" data-te="న్యాయ రంగాలను తెలుసుకోండి">Understand Legal Areas</span><b>→</b></a>
-        <a href="#resources"><span class="quick-icon">▤</span><span data-en="Read Legal Information" data-te="న్యాయ సమాచారం చదవండి">Read Legal Information</span><b>→</b></a>
+    <section class="trust-strip" aria-label="Website information">
+      <div class="container trust-grid">
+        <div><strong>01</strong><span data-en="Understand legal processes" data-te="న్యాయ ప్రక్రియలను అర్థం చేసుకోండి">Understand legal processes</span></div>
+        <div><strong>02</strong><span data-en="Explore practice areas" data-te="న్యాయ రంగాలను తెలుసుకోండి">Explore practice areas</span></div>
+        <div><strong>03</strong><span data-en="Connect for enquiries" data-te="విచారణల కోసం సంప్రదించండి">Connect for enquiries</span></div>
       </div>
     </section>
 
-    <section class="section" id="directory">
+    <section class="section section-white" id="practice-areas">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <div class="eyebrow eyebrow-dark" data-en="ADVOCATE DIRECTORY" data-te="న్యాయవాదుల డైరెక్టరీ">ADVOCATE DIRECTORY</div>
-            <h2 data-en="Find an advocate" data-te="న్యాయవాదిని కనుగొనండి">Find an advocate</h2>
-            <p data-en="Explore advocate profiles by practice area and location." data-te="న్యాయ రంగం మరియు ప్రాంతం ఆధారంగా న్యాయవాదుల వివరాలను చూడండి.">Explore advocate profiles by practice area and location.</p>
-          </div>
-          <span class="directory-tag" data-en="Local listings" data-te="స్థానిక వివరాలు">Local listings</span>
+          <p class="section-kicker" data-en="LEGAL SERVICES & KNOWLEDGE" data-te="న్యాయ సేవలు & సమాచారం">LEGAL SERVICES & KNOWLEDGE</p>
+          <h2 data-en="Explore legal practice areas" data-te="న్యాయ సంబంధిత రంగాలను తెలుసుకోండి">Explore legal practice areas</h2>
+          <p data-en="Start with a subject to understand common procedures, documents and possible next steps." data-te="సాధారణ విధానాలు, అవసరమైన పత్రాలు మరియు తదుపరి చర్యలను తెలుసుకోవడానికి ఒక అంశాన్ని ఎంచుకోండి.">Start with a subject to understand common procedures, documents and possible next steps.</p>
         </div>
-
-        <div class="search-panel">
-          <label class="search-field">
-            <span>⌕</span>
-            <input id="advocateSearch" type="search" placeholder="Search by name or keyword" data-placeholder-en="Search by name or keyword" data-placeholder-te="పేరు లేదా అంశం ద్వారా వెతకండి">
-          </label>
-          <label class="select-field">
-            <span class="sr-only" data-en="Practice area" data-te="న్యాయ రంగం">Practice area</span>
-            <select id="practiceFilter">
-              <option value="" data-en="All practice areas" data-te="అన్ని న్యాయ రంగాలు">All practice areas</option>
-              <option value="civil" data-en="Civil & Property" data-te="సివిల్ & ఆస్తి">Civil & Property</option>
-              <option value="criminal" data-en="Criminal Law" data-te="క్రిమినల్ న్యాయం">Criminal Law</option>
-              <option value="family" data-en="Family Law" data-te="కుటుంబ న్యాయం">Family Law</option>
-              <option value="consumer" data-en="Consumer Matters" data-te="వినియోగదారుల వ్యవహారాలు">Consumer Matters</option>
-              <option value="banking" data-en="Banking & Recovery" data-te="బ్యాంకింగ్ & రికవరీ">Banking & Recovery</option>
-            </select>
-          </label>
-          <button class="btn btn-navy" id="searchButton" type="button" data-en="Search" data-te="వెతకండి">Search</button>
+        <div class="area-grid">
+          <article class="area-card"><span class="area-number">01</span><div class="area-icon">§</div><h3 data-en="Criminal Law" data-te="క్రిమినల్ న్యాయం">Criminal Law</h3><p data-en="Arrest, bail, FIR, investigation and trial-related information." data-te="అరెస్ట్, బెయిల్, ఎఫ్‌ఐఆర్, దర్యాప్తు మరియు విచారణకు సంబంధించిన సమాచారం.">Arrest, bail, FIR, investigation and trial-related information.</p><a href="#resources" class="text-link" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
+          <article class="area-card"><span class="area-number">02</span><div class="area-icon">¶</div><h3 data-en="Civil & Property Disputes" data-te="సివిల్ & ఆస్తి వివాదాలు">Civil & Property Disputes</h3><p data-en="Recovery suits, injunctions, property disputes and civil procedure." data-te="రికవరీ దావాలు, ఇంజంక్షన్లు, ఆస్తి వివాదాలు మరియు సివిల్ ప్రక్రియ.">Recovery suits, injunctions, property disputes and civil procedure.</p><a href="#resources" class="text-link" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
+          <article class="area-card"><span class="area-number">03</span><div class="area-icon">₹</div><h3 data-en="Banking & Finance" data-te="బ్యాంకింగ్ & ఆర్థిక వ్యవహారాలు">Banking & Finance</h3><p data-en="SARFAESI matters, loan recovery, payment disputes and execution proceedings." data-te="సర్ఫేసీ వ్యవహారాలు, రుణ వసూళ్లు, చెల్లింపు వివాదాలు మరియు ఎగ్జిక్యూషన్ ప్రక్రియలు.">SARFAESI matters, loan recovery, payment disputes and execution proceedings.</p><a href="#resources" class="text-link" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
+          <article class="area-card"><span class="area-number">04</span><div class="area-icon">01</div><h3 data-en="Negotiable Instruments" data-te="నెగోషియబుల్ ఇన్‌స్ట్రుమెంట్స్">Negotiable Instruments</h3><p data-en="Cheque dishonour notices, Section 138 complaints and case procedure." data-te="చెక్ బౌన్స్ నోటీసులు, సెక్షన్ 138 ఫిర్యాదులు మరియు కేసు విధానం.">Cheque dishonour notices, Section 138 complaints and case procedure.</p><a href="#resources" class="text-link" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
+          <article class="area-card"><span class="area-number">05</span><div class="area-icon">⌂</div><h3 data-en="Family Law" data-te="కుటుంబ న్యాయం">Family Law</h3><p data-en="Marriage, divorce, maintenance, custody and family court procedures." data-te="వివాహం, విడాకులు, భరణం, పిల్లల సంరక్షణ మరియు కుటుంబ న్యాయస్థాన విధానాలు.">Marriage, divorce, maintenance, custody and family court procedures.</p><a href="#resources" class="text-link" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
+          <article class="area-card"><span class="area-number">06</span><div class="area-icon">⚖</div><h3 data-en="Consumer & Other Matters" data-te="వినియోగదారుల & ఇతర వ్యవహారాలు">Consumer & Other Matters</h3><p data-en="Consumer complaints, service deficiencies and general legal remedies." data-te="వినియోగదారుల ఫిర్యాదులు, సేవా లోపాలు మరియు సాధారణ న్యాయ పరిష్కారాలు.">Consumer complaints, service deficiencies and general legal remedies.</p><a href="#resources" class="text-link" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
         </div>
-
-        <div class="directory-empty" id="directoryEmpty">
-          <div class="empty-icon">⚖</div>
-          <h3 data-en="Advocate listings are being prepared" data-te="న్యాయవాదుల వివరాలు సిద్ధం చేయబడుతున్నాయి">Advocate listings are being prepared</h3>
-          <p data-en="Verified advocate profiles will appear here. No advocate profiles have been published yet." data-te="ధృవీకరించిన న్యాయవాదుల వివరాలు ఇక్కడ కనిపిస్తాయి. ప్రస్తుతం ఎలాంటి న్యాయవాది ప్రొఫైల్ ప్రచురించబడలేదు.">Verified advocate profiles will appear here. No advocate profiles have been published yet.</p>
-          <a href="#contact" class="text-link" data-en="Contact the website team" data-te="వెబ్‌సైట్ నిర్వాహకులను సంప్రదించండి">Contact the website team →</a>
-        </div>
-        <p class="directory-note" data-en="Directory note: A listing will be published only after identity, enrolment and profile details are checked. Inclusion does not amount to a recommendation or guarantee." data-te="డైరెక్టరీ గమనిక: గుర్తింపు, ఎన్‌రోల్‌మెంట్ మరియు ప్రొఫైల్ వివరాలను పరిశీలించిన తర్వాత మాత్రమే వివరాలు ప్రచురించబడతాయి. జాబితాలో ఉండటం సిఫార్సు లేదా హామీ కాదు.">Directory note: A listing will be published only after identity, enrolment and profile details are checked. Inclusion does not amount to a recommendation or guarantee.</p>
       </div>
     </section>
 
-    <section class="section section-soft" id="practice">
+    <section class="section section-dark" id="resources">
       <div class="container">
-        <div class="section-heading centered">
-          <div class="eyebrow eyebrow-dark" data-en="PRACTICE AREAS" data-te="న్యాయ రంగాలు">PRACTICE AREAS</div>
-          <h2 data-en="Explore legal areas" data-te="న్యాయ రంగాలను తెలుసుకోండి">Explore legal areas</h2>
-          <p data-en="Start with a subject to find general legal information." data-te="సాధారణ న్యాయ సమాచారాన్ని తెలుసుకోవడానికి ఒక అంశాన్ని ఎంచుకోండి.">Start with a subject to find general legal information.</p>
+        <div class="section-heading section-heading-dark">
+          <p class="section-kicker" data-en="LEGAL INFORMATION" data-te="న్యాయ సమాచారం">LEGAL INFORMATION</p>
+          <h2 data-en="Know the process before you take the next step." data-te="తదుపరి చర్యకు ముందు న్యాయ ప్రక్రియను తెలుసుకోండి.">Know the process before you take the next step.</h2>
+          <p data-en="Educational resources will be organised here. This information is general and is not a substitute for advice on your individual facts." data-te="విద్యాపరమైన న్యాయ సమాచారం ఇక్కడ అందించబడుతుంది. ఇది సాధారణ సమాచారం మాత్రమే; మీ వ్యక్తిగత పరిస్థితులకు సంబంధించిన న్యాయ సలహాకు ప్రత్యామ్నాయం కాదు.">Educational resources will be organised here. This information is general and is not a substitute for advice on your individual facts.</p>
         </div>
-        <div class="practice-grid">
-          <article class="practice-card"><div class="practice-icon">⚖</div><h3 data-en="Criminal Law" data-te="క్రిమినల్ న్యాయం">Criminal Law</h3><p data-en="FIR, arrest, bail and criminal court procedure." data-te="ఎఫ్‌ఐఆర్, అరెస్ట్, బెయిల్ మరియు క్రిమినల్ కోర్టు విధానం.">FIR, arrest, bail and criminal court procedure.</p><a href="#resources" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
-          <article class="practice-card"><div class="practice-icon">⌂</div><h3 data-en="Civil & Property" data-te="సివిల్ & ఆస్తి">Civil & Property</h3><p data-en="Property disputes, injunctions, recovery and civil suits." data-te="ఆస్తి వివాదాలు, ఇంజంక్షన్లు, రికవరీ మరియు సివిల్ దావాలు.">Property disputes, injunctions, recovery and civil suits.</p><a href="#resources" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
-          <article class="practice-card"><div class="practice-icon">♡</div><h3 data-en="Family Law" data-te="కుటుంబ న్యాయం">Family Law</h3><p data-en="Marriage, divorce, maintenance and child-related matters." data-te="వివాహం, విడాకులు, భరణం మరియు పిల్లలకు సంబంధించిన వ్యవహారాలు.">Marriage, divorce, maintenance and child-related matters.</p><a href="#resources" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
-          <article class="practice-card"><div class="practice-icon">▣</div><h3 data-en="Consumer Matters" data-te="వినియోగదారుల వ్యవహారాలు">Consumer Matters</h3><p data-en="Consumer complaints, defective goods and service disputes." data-te="వినియోగదారుల ఫిర్యాదులు, లోపభూయిష్ట వస్తువులు మరియు సేవా వివాదాలు.">Consumer complaints, defective goods and service disputes.</p><a href="#resources" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
-          <article class="practice-card"><div class="practice-icon">₹</div><h3 data-en="Banking & Recovery" data-te="బ్యాంకింగ్ & రికవరీ">Banking & Recovery</h3><p data-en="Loan recovery, cheque cases and secured-credit issues." data-te="రుణ వసూళ్లు, చెక్ కేసులు మరియు సెక్యూర్డ్ క్రెడిట్ సమస్యలు.">Loan recovery, cheque cases and secured-credit issues.</p><a href="#resources" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
-          <article class="practice-card"><div class="practice-icon">¶</div><h3 data-en="Legal Notices" data-te="న్యాయ నోటీసులు">Legal Notices</h3><p data-en="Understand the purpose and general process of legal notices." data-te="న్యాయ నోటీసుల ఉద్దేశ్యం మరియు సాధారణ విధానాన్ని తెలుసుకోండి.">Understand the purpose and general process of legal notices.</p><a href="#resources" data-en="Explore information →" data-te="సమాచారం చూడండి →">Explore information →</a></article>
+        <div class="resource-list">
+          <a class="resource-row" href="#contact"><span class="resource-index">01</span><span><strong data-en="Arrest, FIR & Bail" data-te="అరెస్ట్, ఎఫ్‌ఐఆర్ & బెయిల్">Arrest, FIR & Bail</strong><small data-en="Basic stages and procedural information" data-te="ప్రాథమిక దశలు మరియు విధాన సమాచారం">Basic stages and procedural information</small></span><span class="resource-arrow">↗</span></a>
+          <a class="resource-row" href="#contact"><span class="resource-index">02</span><span><strong data-en="Cheque Bounce — Section 138" data-te="చెక్ బౌన్స్ — సెక్షన్ 138">Cheque Bounce — Section 138</strong><small data-en="Notice, limitation and complaint process" data-te="నోటీసు, గడువు మరియు ఫిర్యాదు విధానం">Notice, limitation and complaint process</small></span><span class="resource-arrow">↗</span></a>
+          <a class="resource-row" href="#contact"><span class="resource-index">03</span><span><strong data-en="SARFAESI & Loan Recovery" data-te="సర్ఫేసీ & రుణ వసూళ్లు">SARFAESI & Loan Recovery</strong><small data-en="Borrower notices and recovery stages" data-te="రుణగ్రహీత నోటీసులు మరియు వసూళ్ల దశలు">Borrower notices and recovery stages</small></span><span class="resource-arrow">↗</span></a>
+          <a class="resource-row" href="#contact"><span class="resource-index">04</span><span><strong data-en="Civil Suits & Execution Petitions" data-te="సివిల్ దావాలు & ఎగ్జిక్యూషన్ పిటిషన్లు">Civil Suits & Execution Petitions</strong><small data-en="Institution, decree and execution basics" data-te="దావా దాఖలు, డిక్రీ మరియు అమలు ప్రాథమిక అంశాలు">Institution, decree and execution basics</small></span><span class="resource-arrow">↗</span></a>
         </div>
+        <p class="disclaimer" data-en="Legal information on this website is for general awareness only. Laws and procedures may change. Please obtain advice after reviewing the relevant documents and facts." data-te="ఈ వెబ్‌సైట్‌లోని న్యాయ సమాచారం సాధారణ అవగాహన కోసం మాత్రమే. చట్టాలు మరియు విధానాలు మారవచ్చు. సంబంధిత పత్రాలు, వాస్తవాలను పరిశీలించిన తర్వాత న్యాయ సలహా పొందండి.">Legal information on this website is for general awareness only. Laws and procedures may change. Please obtain advice after reviewing the relevant documents and facts.</p>
       </div>
     </section>
 
-    <section class="section" id="resources">
+
+    <section class="section section-white advice-section" id="legal-advice">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <div class="eyebrow eyebrow-dark" data-en="LEGAL AWARENESS" data-te="న్యాయ అవగాహన">LEGAL AWARENESS</div>
-            <h2 data-en="Legal information for everyone" data-te="ప్రతి ఒక్కరికీ న్యాయ సమాచారం">Legal information for everyone</h2>
-            <p data-en="Plain-language introductions to common legal topics." data-te="సాధారణ న్యాయ అంశాలపై సరళమైన పరిచయాలు.">Plain-language introductions to common legal topics.</p>
-          </div>
+          <p class="section-kicker">LEGAL ADVICE & PUBLIC AWARENESS</p>
+          <h2>Answered Questions</h2>
+          <p>Browse legal topics and send us your question. Select a subject to open the enquiry form with that topic already selected.</p>
         </div>
-        <div class="resource-grid">
-          <article class="resource-card"><div class="resource-label">01 · CRIMINAL</div><h3 data-en="What happens after an FIR is registered?" data-te="ఎఫ్‌ఐఆర్ నమోదు అయిన తర్వాత ఏమి జరుగుతుంది?">What happens after an FIR is registered?</h3><p data-en="A general overview of investigation and the next procedural steps." data-te="దర్యాప్తు మరియు తదుపరి చట్టపరమైన దశలపై సాధారణ అవగాహన.">A general overview of investigation and the next procedural steps.</p><span data-en="Introductory guide" data-te="ప్రాథమిక మార్గదర్శకం">Introductory guide</span></article>
-          <article class="resource-card"><div class="resource-label">02 · FAMILY</div><h3 data-en="Understanding maintenance proceedings" data-te="భరణం కేసులపై అవగాహన">Understanding maintenance proceedings</h3><p data-en="Learn what maintenance generally means and why facts matter." data-te="భరణం అంటే ఏమిటి, ప్రతి కేసులో వాస్తవాలు ఎందుకు ముఖ్యమో తెలుసుకోండి.">Learn what maintenance generally means and why facts matter.</p><span data-en="Introductory guide" data-te="ప్రాథమిక మార్గదర్శకం">Introductory guide</span></article>
-          <article class="resource-card"><div class="resource-label">03 · CIVIL</div><h3 data-en="A basic guide to civil suits" data-te="సివిల్ దావాలపై ప్రాథమిక మార్గదర్శకం">A basic guide to civil suits</h3><p data-en="An introduction to pleadings, evidence and court proceedings." data-te="ప్లీడింగ్స్, సాక్ష్యాలు మరియు కోర్టు ప్రక్రియల పరిచయం.">An introduction to pleadings, evidence and court proceedings.</p><span data-en="Introductory guide" data-te="ప్రాథమిక మార్గదర్శకం">Introductory guide</span></article>
+        <div class="advice-groups">
+          <section class="advice-group" aria-labelledby="advice-criminal">
+            <h3 id="advice-criminal">Criminal & Court Matters</h3>
+            <div class="advice-topic-list">
+              <button type="button" data-legal-topic="Anticipatory Bail">Anticipatory Bail <span>↗</span></button>
+              <button type="button" data-legal-topic="Criminal Law">Criminal <span>↗</span></button>
+              <button type="button" data-legal-topic="Cyber Crime">Cyber Crime <span>↗</span></button>
+              <button type="button" data-legal-topic="High Court">High Court <span>↗</span></button>
+              <button type="button" data-legal-topic="Supreme Court">Supreme Court <span>↗</span></button>
+              <button type="button" data-legal-topic="Armed Forces Tribunal">Armed Forces Tribunal <span>↗</span></button>
+              <button type="button" data-legal-topic="NCLT">NCLT <span>↗</span></button>
+              <button type="button" data-legal-topic="RTI">R.T.I <span>↗</span></button>
+            </div>
+          </section>
+          <section class="advice-group" aria-labelledby="advice-family">
+            <h3 id="advice-family">Personal & Family</h3>
+            <div class="advice-topic-list">
+              <button type="button" data-legal-topic="Child Custody">Child Custody <span>↗</span></button>
+              <button type="button" data-legal-topic="Court Marriage">Court Marriage <span>↗</span></button>
+              <button type="button" data-legal-topic="Divorce">Divorce <span>↗</span></button>
+              <button type="button" data-legal-topic="Domestic Violence">Domestic Violence <span>↗</span></button>
+              <button type="button" data-legal-topic="Family Law">Family <span>↗</span></button>
+              <button type="button" data-legal-topic="Muslim Law">Muslim Law <span>↗</span></button>
+              <button type="button" data-legal-topic="Succession Certificate">Succession Certificate <span>↗</span></button>
+              <button type="button" data-legal-topic="Wills / Trusts">Wills / Trusts <span>↗</span></button>
+            </div>
+          </section>
+          <section class="advice-group" aria-labelledby="advice-civil">
+            <h3 id="advice-civil">Civil, Property & Recovery</h3>
+            <div class="advice-topic-list">
+              <button type="button" data-legal-topic="Breach of Contract">Breach of Contract <span>↗</span></button>
+              <button type="button" data-legal-topic="Civil Law">Civil <span>↗</span></button>
+              <button type="button" data-legal-topic="Cheque Bounce">Cheque Bounce <span>↗</span></button>
+              <button type="button" data-legal-topic="Consumer Court">Consumer Court <span>↗</span></button>
+              <button type="button" data-legal-topic="Documentation">Documentation <span>↗</span></button>
+              <button type="button" data-legal-topic="Landlord / Tenant">Landlord / Tenant <span>↗</span></button>
+              <button type="button" data-legal-topic="Property">Property <span>↗</span></button>
+              <button type="button" data-legal-topic="Recovery">Recovery <span>↗</span></button>
+              <button type="button" data-legal-topic="RERA">RERA <span>↗</span></button>
+            </div>
+          </section>
+          <section class="advice-group" aria-labelledby="advice-business">
+            <h3 id="advice-business">Banking, Business & Tax</h3>
+            <div class="advice-topic-list">
+              <button type="button" data-legal-topic="Arbitration">Arbitration <span>↗</span></button>
+              <button type="button" data-legal-topic="Banking / Finance">Banking / Finance <span>↗</span></button>
+              <button type="button" data-legal-topic="Bankruptcy / Insolvency">Bankruptcy / Insolvency <span>↗</span></button>
+              <button type="button" data-legal-topic="Corporate Law">Corporate <span>↗</span></button>
+              <button type="button" data-legal-topic="Customs & Central Excise">Customs & Central Excise <span>↗</span></button>
+              <button type="button" data-legal-topic="GST">GST <span>↗</span></button>
+              <button type="button" data-legal-topic="Startup Law">Startup <span>↗</span></button>
+              <button type="button" data-legal-topic="Tax">Tax <span>↗</span></button>
+              <button type="button" data-legal-topic="Trademark & Copyright">Trademark & Copyright <span>↗</span></button>
+            </div>
+          </section>
+          <section class="advice-group" aria-labelledby="advice-special">
+            <h3 id="advice-special">Specialised Legal Matters</h3>
+            <div class="advice-topic-list">
+              <button type="button" data-legal-topic="Immigration">Immigration <span>↗</span></button>
+              <button type="button" data-legal-topic="Insurance">Insurance <span>↗</span></button>
+              <button type="button" data-legal-topic="International Law">International Law <span>↗</span></button>
+              <button type="button" data-legal-topic="Labour & Service">Labour & Service <span>↗</span></button>
+              <button type="button" data-legal-topic="Media and Entertainment">Media and Entertainment <span>↗</span></button>
+              <button type="button" data-legal-topic="Medical Negligence">Medical Negligence <span>↗</span></button>
+              <button type="button" data-legal-topic="Motor Accident">Motor Accident <span>↗</span></button>
+              <button type="button" data-legal-topic="NRI Matters">NRI <span>↗</span></button>
+              <button type="button" data-legal-topic="Patent">Patent <span>↗</span></button>
+            </div>
+          </section>
         </div>
-        <div class="info-callout"><strong data-en="Please note" data-te="దయచేసి గమనించండి">Please note</strong><p data-en="These are topic introductions, not complete legal articles or advice. Detailed, reviewed articles and relevant legal updates should be added before public launch." data-te="ఇవి అంశాల పరిచయాలు మాత్రమే; పూర్తి న్యాయ వ్యాసాలు లేదా న్యాయ సలహా కావు. ప్రజలకు అందుబాటులో ఉంచే ముందు సమీక్షించిన పూర్తి వ్యాసాలు మరియు సంబంధిత న్యాయ నవీకరణలు జోడించాలి.">These are topic introductions, not complete legal articles or advice. Detailed, reviewed articles and relevant legal updates should be added before public launch.</p></div>
+        <div class="advice-note">
+          <strong>Have a question that is not listed?</strong>
+          <span>Choose “Other” in the enquiry form and describe your issue briefly.</span>
+          <button class="button button-dark" type="button" data-open-lawyer-modal>Ask a Legal Question</button>
+        </div>
+        <p class="advice-disclaimer">This section is a directory of legal topics, not a collection of published answers yet. Topic-specific answers will be added after legal review. General information on this website is not a substitute for advice based on your documents and individual facts.</p>
       </div>
     </section>
 
-    <section class="cta-band">
-      <div class="container cta-inner">
-        <div><div class="eyebrow eyebrow-gold" data-en="LOCAL · INFORMATIVE · ACCESSIBLE" data-te="స్థానికం · సమాచారంతో · అందుబాటులో">LOCAL · INFORMATIVE · ACCESSIBLE</div><h2 data-en="Better legal awareness starts with the right information." data-te="సరైన సమాచారంతో మెరుగైన న్యాయ అవగాహన ప్రారంభమవుతుంది.">Better legal awareness starts with the right information.</h2></div>
-        <a href="#contact" class="btn btn-gold" data-en="Get in touch" data-te="సంప్రదించండి">Get in touch</a>
+    <section class="section section-dark guides-section" id="guides-articles">
+      <div class="container">
+        <div class="section-heading section-heading-dark">
+          <p class="section-kicker">LEGAL KNOWLEDGE CENTRE</p>
+          <h2>Guides &amp; Articles</h2>
+          <p>Explore practical legal topics. Select a subject to enquire about it or request guidance. Topic-specific articles will be published as they are prepared and reviewed.</p>
+        </div>
+        <div class="guide-groups">
+          <section class="guide-group" aria-labelledby="guide-group-1">
+            <h3 id="guide-group-1">Personal & Family Law</h3>
+            <div class="guide-topic-list">
+              <button type="button" data-legal-topic="Divorce">Divorce <span>↗</span></button>
+              <button type="button" data-legal-topic="Medical Negligence">Medical Negligence <span>↗</span></button>
+              <button type="button" data-legal-topic="Landlord / Tenant">Landlord / Tenant <span>↗</span></button>
+              <button type="button" data-legal-topic="Property">Property <span>↗</span></button>
+              <button type="button" data-legal-topic="Motor Accident">Motor Accident <span>↗</span></button>
+              <button type="button" data-legal-topic="Wills / Trusts">Wills / Trusts <span>↗</span></button>
+              <button type="button" data-legal-topic="Child Custody">Child Custody <span>↗</span></button>
+              <button type="button" data-legal-topic="Muslim Law">Muslim Law <span>↗</span></button>
+              <button type="button" data-legal-topic="Family">Family <span>↗</span></button>
+              <button type="button" data-legal-topic="Domestic Violence">Domestic Violence <span>↗</span></button>
+              <button type="button" data-legal-topic="Court Marriage">Court Marriage <span>↗</span></button>
+              <button type="button" data-legal-topic="Succession Certificate">Succession Certificate <span>↗</span></button>
+            </div>
+          </section>
+          <section class="guide-group" aria-labelledby="guide-group-2">
+            <h3 id="guide-group-2">Criminal & Court Matters</h3>
+            <div class="guide-topic-list">
+              <button type="button" data-legal-topic="Criminal Law">Criminal Law <span>↗</span></button>
+              <button type="button" data-legal-topic="Anticipatory Bail">Anticipatory Bail <span>↗</span></button>
+              <button type="button" data-legal-topic="Cyber Crime">Cyber Crime <span>↗</span></button>
+              <button type="button" data-legal-topic="Supreme Court">Supreme Court <span>↗</span></button>
+              <button type="button" data-legal-topic="Armed Forces Tribunal">Armed Forces Tribunal <span>↗</span></button>
+            </div>
+          </section>
+          <section class="guide-group" aria-labelledby="guide-group-3">
+            <h3 id="guide-group-3">Civil & Commercial Law</h3>
+            <div class="guide-topic-list">
+              <button type="button" data-legal-topic="Cheque Bounce">Cheque Bounce <span>↗</span></button>
+              <button type="button" data-legal-topic="Consumer Court">Consumer Court <span>↗</span></button>
+              <button type="button" data-legal-topic="Civil Law">Civil Law <span>↗</span></button>
+              <button type="button" data-legal-topic="Recovery">Recovery <span>↗</span></button>
+              <button type="button" data-legal-topic="Breach of Contract">Breach of Contract <span>↗</span></button>
+              <button type="button" data-legal-topic="Documentation">Documentation <span>↗</span></button>
+              <button type="button" data-legal-topic="Arbitration">Arbitration <span>↗</span></button>
+            </div>
+          </section>
+          <section class="guide-group" aria-labelledby="guide-group-4">
+            <h3 id="guide-group-4">Business, Banking & Tax</h3>
+            <div class="guide-topic-list">
+              <button type="button" data-legal-topic="Corporate">Corporate <span>↗</span></button>
+              <button type="button" data-legal-topic="Banking / Finance">Banking / Finance <span>↗</span></button>
+              <button type="button" data-legal-topic="Bankruptcy / Insolvency">Bankruptcy / Insolvency <span>↗</span></button>
+              <button type="button" data-legal-topic="Customs & Central Excise">Customs & Central Excise <span>↗</span></button>
+              <button type="button" data-legal-topic="GST">GST <span>↗</span></button>
+              <button type="button" data-legal-topic="Startup">Startup <span>↗</span></button>
+              <button type="button" data-legal-topic="Tax">Tax <span>↗</span></button>
+              <button type="button" data-legal-topic="Trademark & Copyright">Trademark & Copyright <span>↗</span></button>
+              <button type="button" data-legal-topic="Patent">Patent <span>↗</span></button>
+            </div>
+          </section>
+          <section class="guide-group" aria-labelledby="guide-group-5">
+            <h3 id="guide-group-5">Specialised Legal Matters</h3>
+            <div class="guide-topic-list">
+              <button type="button" data-legal-topic="Immigration">Immigration <span>↗</span></button>
+              <button type="button" data-legal-topic="Insurance">Insurance <span>↗</span></button>
+              <button type="button" data-legal-topic="International Law">International Law <span>↗</span></button>
+              <button type="button" data-legal-topic="Labour & Service">Labour & Service <span>↗</span></button>
+              <button type="button" data-legal-topic="R.T.I">R.T.I <span>↗</span></button>
+              <button type="button" data-legal-topic="NRI">NRI <span>↗</span></button>
+              <button type="button" data-legal-topic="Personal Injury">Personal Injury <span>↗</span></button>
+            </div>
+          </section>
+        </div>
+        <div class="guide-callout">
+          <strong>Looking for a guide on a different legal issue?</strong>
+          <span>Send your question and select the relevant subject in the enquiry form.</span>
+          <button class="button button-light" type="button" data-open-lawyer-modal>Talk to a Lawyer</button>
+        </div>
+        <p class="guide-disclaimer">The topics listed above are subject categories, not links to completed articles at this stage. Articles will be added after appropriate legal research and review. Website content is for general awareness and is not individual legal advice.</p>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
-        <div><div class="eyebrow eyebrow-dark" data-en="CONTACT" data-te="సంప్రదించండి">CONTACT</div><h2 data-en="Contact the website team" data-te="వెబ్‌సైట్ నిర్వాహకులను సంప్రదించండి">Contact the website team</h2><p data-en="For website corrections, advocate directory enquiries or content suggestions, contact details will be published here." data-te="వెబ్‌సైట్ సవరణలు, న్యాయవాదుల డైరెక్టరీ వివరాలు లేదా కంటెంట్ సూచనల కోసం సంప్రదింపు వివరాలు ఇక్కడ ప్రచురించబడతాయి.">For website corrections, advocate directory enquiries or content suggestions, contact details will be published here.</p></div>
-        <div class="contact-placeholder"><div class="contact-symbol">✉</div><h3 data-en="Contact details to be added" data-te="సంప్రదింపు వివరాలు జోడించాలి">Contact details to be added</h3><p data-en="Add an official email address and business contact number before publishing this section." data-te="ఈ విభాగాన్ని ప్రచురించే ముందు అధికారిక ఇమెయిల్ చిరునామా మరియు సంప్రదింపు నంబర్ జోడించండి.">Add an official email address and business contact number before publishing this section.</p></div>
+    <section class="section section-white" id="advocates">
+      <div class="container directory-layout">
+        <div>
+          <p class="section-kicker" data-en="ADVOCATE DIRECTORY" data-te="న్యాయవాదుల డైరెక్టరీ">ADVOCATE DIRECTORY</p>
+          <h2 data-en="Find legal professionals in your area." data-te="మీ ప్రాంతంలోని న్యాయ నిపుణులను కనుగొనండి.">Find legal professionals in your area.</h2>
+          <p class="directory-copy" data-en="The directory is being developed. Advocate profiles will be published after the relevant details and consent are verified." data-te="న్యాయవాదుల డైరెక్టరీ అభివృద్ధి దశలో ఉంది. వివరాలు మరియు సమ్మతి ధృవీకరించిన తర్వాత ప్రొఫైళ్లు ప్రచురించబడతాయి.">The directory is being developed. Advocate profiles will be published after the relevant details and consent are verified.</p>
+          <button class="button button-dark" type="button" data-open-lawyer-modal data-en="Talk to a Lawyer" data-te="న్యాయవాదితో మాట్లాడండి">Talk to a Lawyer</button>
+        </div>
+        <div class="directory-panel">
+          <div class="directory-panel-icon">⚖</div>
+          <h3 data-en="Local advocate listings" data-te="స్థానిక న్యాయవాదుల వివరాలు">Local advocate listings</h3>
+          <p data-en="Searchable profiles, practice areas and contact information will be added as verified listings become available." data-te="ధృవీకరించిన వివరాలు అందుబాటులోకి వచ్చినప్పుడు శోధించగల ప్రొఫైళ్లు, న్యాయ రంగాలు మరియు సంప్రదింపు వివరాలు చేర్చబడతాయి.">Searchable profiles, practice areas and contact information will be added as verified listings become available.</p>
+          <span class="status-label">DIRECTORY IN DEVELOPMENT</span>
+          <p class="directory-help">Need help to find the right lawyer?</p>
+          <button class="button button-dark" type="button" data-open-lawyer-modal>Start Here</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-mark">R<span>.</span>L</div>
+        <div>
+          <p class="section-kicker" data-en="ABOUT RAJAHMUNDRY.LEGAL" data-te="రాజహమండ్రి.లీగల్ గురించి">ABOUT RAJAHMUNDRY.LEGAL</p>
+          <h2 data-en="Local access to legal knowledge." data-te="స్థానికంగా న్యాయ పరిజ్ఞానానికి అందుబాటు.">Local access to legal knowledge.</h2>
+          <p data-en="Rajahmundry.Legal is an information platform intended to make legal topics easier to understand and help people discover advocate-directory information for Rajamahendravaram and nearby areas." data-te="రాజహమండ్రి.లీగల్ అనేది న్యాయ అంశాలను సులభంగా అర్థం చేసుకోవడానికి మరియు రాజమహేంద్రవరం పరిసర ప్రాంతాల్లో న్యాయవాదుల వివరాలను తెలుసుకోవడానికి రూపొందించిన సమాచార వేదిక.">Rajahmundry.Legal is an information platform intended to make legal topics easier to understand and help people discover advocate-directory information for Rajamahendravaram and nearby areas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-inner">
+        <div>
+          <p class="section-kicker section-kicker-light" data-en="GET IN TOUCH" data-te="సంప్రదించండి">GET IN TOUCH</p>
+          <h2 data-en="Have a legal enquiry?" data-te="మీకు న్యాయపరమైన సందేహం ఉందా?">Have a legal enquiry?</h2>
+          <p data-en="Send a WhatsApp message to make an enquiry. Please do not send confidential documents or sensitive personal information until a professional relationship is established." data-te="విచారణ కోసం వాట్సాప్ సందేశం పంపండి. వృత్తిపరమైన సంబంధం ఏర్పడే వరకు రహస్య పత్రాలు లేదా సున్నితమైన వ్యక్తిగత సమాచారాన్ని పంపవద్దు.">Send a WhatsApp message to make an enquiry. Please do not send confidential documents or sensitive personal information until a professional relationship is established.</p>
+        </div>
+        <a class="button button-light contact-button" href="https://wa.me/919912115225?text=Hello%20Rajahmundry.Legal%2C%20I%20have%20a%20legal%20enquiry." target="_blank" rel="noopener noreferrer">
+          <span class="whatsapp-symbol">◉</span><span data-en="Contact through WhatsApp" data-te="వాట్సాప్ ద్వారా సంప్రదించండి">Contact through WhatsApp</span><span>↗</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="about">
+  <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-brand"><img src="assets/rajahmundry-legal-logo.png" alt=""><p data-en="Local legal information and advocate directory for Rajamahendravaram and nearby areas." data-te="రాజమహేంద్రవరం మరియు పరిసర ప్రాంతాల కోసం స్థానిక న్యాయ సమాచారం మరియు న్యాయవాదుల డైరెక్టరీ.">Local legal information and advocate directory for Rajamahendravaram and nearby areas.</p></div>
-      <div><h4 data-en="Explore" data-te="విభాగాలు">Explore</h4><a href="#directory" data-en="Find an Advocate" data-te="న్యాయవాదిని కనుగొనండి">Find an Advocate</a><a href="#practice" data-en="Legal Areas" data-te="న్యాయ రంగాలు">Legal Areas</a><a href="#resources" data-en="Legal Information" data-te="న్యాయ సమాచారం">Legal Information</a></div>
-      <div><h4 data-en="Important" data-te="ముఖ్యమైన సమాచారం">Important</h4><a href="#disclaimer" data-en="Disclaimer" data-te="నిరాకరణ">Disclaimer</a><a href="#contact" data-en="Contact" data-te="సంప్రదించండి">Contact</a></div>
+      <div><a class="footer-brand" href="#home">RAJAHMUNDRY<span>.LEGAL</span></a><p data-en="Local legal information & advocate directory" data-te="స్థానిక న్యాయ సమాచారం & న్యాయవాదుల డైరెక్టరీ">Local legal information & advocate directory</p></div>
+      <div class="footer-links"><a href="#practice-areas" data-en="Legal Areas" data-te="న్యాయ రంగాలు">Legal Areas</a><a href="#resources" data-en="Legal Information" data-te="న్యాయ సమాచారం">Legal Information</a>
+        <a href="#guides-articles">Guides &amp; Articles</a>
+        <a href="#legal-advice" data-en="Legal Advice" data-te="న్యాయ సలహా">Legal Advice</a><a href="#advocates" data-en="Advocate Directory" data-te="న్యాయవాదుల డైరెక్టరీ">Advocate Directory</a><a href="#contact" data-en="Contact" data-te="సంప్రదించండి">Contact</a></div>
+      <div class="footer-location"><span>RAJAMAHENDRAVARAM</span><span>ANDHRA PRADESH, INDIA</span><a href="https://wa.me/919912115225" target="_blank" rel="noopener noreferrer">WhatsApp: +91 99121 15225</a></div>
     </div>
-    <div class="container disclaimer" id="disclaimer"><strong data-en="Disclaimer:" data-te="నిరాకరణ:">Disclaimer:</strong> <span data-en="This website provides general legal information and directory information only. It does not provide legal advice, create an advocate-client relationship, or guarantee the services of any listed professional. Users should consult a qualified advocate about their specific facts. Advocate listings must be independently verified and published in accordance with applicable professional-conduct rules." data-te="ఈ వెబ్‌సైట్ సాధారణ న్యాయ సమాచారం మరియు డైరెక్టరీ వివరాలను మాత్రమే అందిస్తుంది. ఇది న్యాయ సలహా కాదు; న్యాయవాది-క్లయింట్ సంబంధాన్ని సృష్టించదు; జాబితాలో ఉన్న నిపుణుల సేవలకు హామీ ఇవ్వదు. తమ నిర్దిష్ట సమస్యలపై వినియోగదారులు అర్హత కలిగిన న్యాయవాదిని సంప్రదించాలి. న్యాయవాదుల వివరాలను స్వతంత్రంగా ధృవీకరించి, వర్తించే వృత్తి ప్రవర్తనా నియమాలకు అనుగుణంగా మాత్రమే ప్రచురించాలి.">This website provides general legal information and directory information only. It does not provide legal advice, create an advocate-client relationship, or guarantee the services of any listed professional. Users should consult a qualified advocate about their specific facts. Advocate listings must be independently verified and published in accordance with applicable professional-conduct rules.</span></div>
-    <div class="footer-bottom"><div class="container"><span>© <span id="year"></span> Rajahmundry.Legal</span><span data-en="Built for local legal awareness" data-te="స్థానిక న్యాయ అవగాహన కోసం రూపొందించబడింది">Built for local legal awareness</span></div></div>
+    <div class="container footer-bottom"><span>© <span id="currentYear"></span> Rajahmundry.Legal. All rights reserved.</span><span data-en="General legal information only · Not legal advice" data-te="సాధారణ న్యాయ సమాచారం మాత్రమే · న్యాయ సలహా కాదు">General legal information only · Not legal advice</span></div>
   </footer>
-  <script src="script.js"></script>
+
+  <div class="modal-backdrop" id="clientAccountModal" hidden>
+    <section class="lawyer-modal account-modal" role="dialog" aria-modal="true" aria-labelledby="clientAccountTitle" aria-describedby="clientAccountIntro">
+      <button class="modal-close" type="button" data-close-client-account aria-label="Close account window">&times;</button>
+      <p class="section-kicker">RAJAHMUNDRY.LEGAL · FOR CLIENTS</p>
+      <h2 id="clientAccountTitle">Client Account</h2>
+      <p class="modal-intro" id="clientAccountIntro">Create an account or log in to your client account.</p>
+      <div class="account-tabs" role="tablist" aria-label="Client account options">
+        <button class="account-tab is-active" id="signupTab" type="button" role="tab" aria-selected="true" aria-controls="clientSignupForm" data-account-tab="signup">Sign Up</button>
+        <button class="account-tab" id="loginTab" type="button" role="tab" aria-selected="false" aria-controls="clientLoginForm" data-account-tab="login">Log In</button>
+      </div>
+      <form id="clientSignupForm" class="account-form" role="tabpanel" aria-labelledby="signupTab">
+        <div class="form-grid">
+          <label class="form-full">Your name<input name="name" type="text" autocomplete="name" placeholder="Enter your full name" required maxlength="100"></label>
+          <label class="form-full">Your E-Mail<input name="email" type="email" autocomplete="email" placeholder="Enter your email address" required maxlength="160"></label>
+          <label>Your Password<input name="password" type="password" autocomplete="new-password" placeholder="Create a password" minlength="8" required></label>
+          <label>Verify your Password<input name="confirmPassword" type="password" autocomplete="new-password" placeholder="Re-enter your password" minlength="8" required></label>
+          <label class="form-full">Your contact no.<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" required></label>
+        </div>
+        <button class="button button-dark modal-submit" type="submit">Create Account</button>
+      </form>
+      <form id="clientLoginForm" class="account-form" role="tabpanel" aria-labelledby="loginTab" hidden>
+        <div class="form-grid">
+          <label class="form-full">Email ID / Phone Number<input name="identity" type="text" autocomplete="username" placeholder="Enter email ID or phone number" required></label>
+          <label class="form-full">Password<input name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required></label>
+        </div>
+        <button class="button button-dark modal-submit" type="submit">Log In</button>
+      </form>
+      <p class="account-status" id="accountStatus" role="status" aria-live="polite">Account registration and login will be enabled after secure authentication is connected.</p>
+      <p class="modal-footnote">Do not enter a real password until secure account services are activated on this website.</p>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="lawyerModal" hidden>
+    <section class="lawyer-modal" role="dialog" aria-modal="true" aria-labelledby="lawyerModalTitle" aria-describedby="lawyerModalIntro">
+      <button class="modal-close" type="button" data-close-lawyer-modal aria-label="Close form">&times;</button>
+      <p class="section-kicker">RAJAHMUNDRY.LEGAL</p>
+      <h2 id="lawyerModalTitle">Talk to a Lawyer</h2>
+      <p class="modal-intro" id="lawyerModalIntro">Just fill in your details so we can understand your legal issue and help you enquire about a suitable advocate in Rajamahendravaram or nearby areas.</p>
+      <form id="lawyerEnquiryForm">
+        <div class="form-grid">
+          <label>Full name<input name="name" type="text" autocomplete="name" placeholder="Enter your name" required maxlength="80"></label>
+          <label>Mobile number<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" required></label>
+          <label>City / Town<input name="location" type="text" autocomplete="address-level2" placeholder="e.g. Rajamahendravaram" required maxlength="80"></label>
+          <label>Legal issue<select name="issue" required><option value="">Select your legal issue</option>
+          <option>Anticipatory Bail</option><option>Arbitration</option><option>Armed Forces Tribunal</option><option>Banking / Finance</option><option>Bankruptcy / Insolvency</option><option>Breach of Contract</option><option>Cheque Bounce</option><option>Child Custody</option><option>Civil Law</option><option>Consumer Court</option><option>Corporate Law</option><option>Corporate</option><option>Court Marriage</option><option>Criminal Law</option><option>Customs & Central Excise</option><option>Cyber Crime</option><option>Divorce</option><option>Documentation</option><option>Domestic Violence</option><option>Family Law</option><option>Family</option><option>GST</option><option>High Court</option><option>Immigration</option><option>Insurance</option><option>International Law</option><option>Labour & Service</option><option>Landlord / Tenant</option><option>Media and Entertainment</option><option>Medical Negligence</option><option>Motor Accident</option><option>Muslim Law</option><option>NCLT</option><option>NRI Matters</option><option>NRI</option><option>Patent</option><option>Personal Injury</option><option>Property</option><option>RTI</option><option>R.T.I</option><option>Recovery</option><option>RERA</option><option>Startup Law</option><option>Startup</option><option>Succession Certificate</option><option>Supreme Court</option><option>Tax</option><option>Trademark & Copyright</option><option>Wills / Trusts</option><option>Other</option></select></label>
+          <label class="form-full">Briefly explain your legal issue<textarea name="details" rows="4" placeholder="Mention the basic facts and what help you are looking for (do not include confidential details)." maxlength="1200" required></textarea></label>
+        </div>
+        <label class="consent-row"><input type="checkbox" name="consent" required><span>I agree to the <a href="#terms-of-use" id="showTerms">Rajahmundry.Legal terms of use</a> and consent to sharing these enquiry details through WhatsApp for responding to my request.</span></label>
+        <div class="terms-note" id="terms-of-use">Your enquiry is not an advocate-client relationship. Do not send confidential documents, passwords, financial account details or sensitive personal information through this form. Any advocate engagement is subject to independent discussion and acceptance.</div>
+        <button class="button button-dark modal-submit" type="submit">Find Lawyers <span aria-hidden="true">↗</span></button>
+        <p class="modal-footnote">Your details will be placed in a WhatsApp message to +91 99121 15225. You can review and send that message yourself.</p>
+      </form>
+    </section>
+  </div>
+
+  <a class="whatsapp-float" href="https://wa.me/919912115225?text=Hello%20Rajahmundry.Legal%2C%20I%20need%20legal%20information." target="_blank" rel="noopener noreferrer" aria-label="Chat with Rajahmundry Legal on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.2A12.5 12.5 0 0 0 5.2 22.1L3.5 28.5l6.6-1.7A12.5 12.5 0 1 0 16 3.2Zm0 22.7a10.1 10.1 0 0 1-5.1-1.4l-.4-.2-3.8 1 1-3.7-.3-.4A10.1 10.1 0 1 1 16 25.9Zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.5-1.5 9.3 9.3 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.4Z"/></svg>
+  </a>
 </body>
 </html>
