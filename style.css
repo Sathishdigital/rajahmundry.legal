@@ -250,3 +250,11 @@ body.modal-open { overflow: hidden; }
 .account-form[hidden] { display: none; }
 .account-status { margin: 18px 0 0; padding: 12px 14px; border: 1px solid #d4d4d4; color: #333; background: #f7f7f7; font-size: 12px; line-height: 1.6; }
 @media (max-width: 700px) { .nav-client { margin: 12px 0 0; align-self: flex-start; } }
+
+/* Client authentication additions */
+.account-dashboard { margin-top: 22px; padding: 20px; border: 1px solid #d4d4d4; background: #fff; }
+.account-dashboard[hidden] { display: none; }
+.account-dashboard h3 { margin: 0 0 12px; }
+.account-dashboard p { overflow-wrap: anywhere; }
+.account-forgot { display: block; margin: 12px 0 0 auto; border: 0; padding: 8px 0; background: transparent; color: #222; text-decoration: underline; cursor: pointer; font: inherit; font-size: 13px; }
+.account-footnote { margin: 12px 0 0; color: #666; font-size: 11px; line-height: 1.6; }
